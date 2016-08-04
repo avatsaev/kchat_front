@@ -1,0 +1,26 @@
+
+#login-container.container
+
+  #login.col-sm-12.text-center
+
+    %span#login-logo
+      %img{:src => "images/logo@2x.png"}/
+
+    %span.title Welcome to KChat
+    %span.subtitle Quick way to exchange messages
+
+  #login-form.col-sm-6.col-sm-offset-3
+
+
+    .form-group.row
+
+      %input#name.form-control{"ng-model" => "login.username", :placeholder => "Your username...", :type => "text", "ui-keypress"=>"{13:'on_join($event)'}"}/
+
+    .form-group.row
+
+
+      %input#frq.form-control{"ng-model" => "login.channel", :placeholder => "Frequency (MHz)...", :type => "text", "ui-keypress"=>"{13:'on_join($event)'}"}/
+
+    .form-group.row
+
+      %input#join.form-control.btn.btn-primary{:name => "join", "ng-click" => "on_login()", :type => "button", :value => "Join"}/
