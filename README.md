@@ -1,4 +1,4 @@
-# kawachat
+# kawachat frontend
 
 
 ## Usage
@@ -9,7 +9,7 @@ Grunt and Bower cli's must be installed in global with npm
 
 Gems coffee, sass, and haml must be installed with bundle
 
-Frontend code is in **./assets/** folder
+Frontend code is in **./app/** folder
 
 ### Installing
 
@@ -24,10 +24,10 @@ Install backend dependencies:
 npm install
 ```
 
-Compile everything:
+Compile everything, start realtime compilation and live reload (see Gruntfile.coffee for more tasks):
 
 ```
-grunt assets
+grunt
 ```
 
 
@@ -37,12 +37,4 @@ Run:
 npm start
 ```
 
-Go to http://localhost:3002
-
-### Developing
-
-Realtime Compilation and live reload:
-
-```
-grunt watch
-```
+Go to http://localhost:3003
