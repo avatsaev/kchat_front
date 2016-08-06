@@ -1,5 +1,6 @@
 # KChat frontend
 
+Demo: http://kchat.nano-cloud.org/
 Backend available here: https://github.com/avatsaev/kchat_backend
 
 ## Usage
