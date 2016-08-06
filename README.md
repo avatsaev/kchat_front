@@ -10,7 +10,7 @@ Use Node 6.x with nvm
 
 Grunt and Bower cli's must be installed in global with npm
 
-Gems coffee, sass, and haml must be installed with bundle
+Gems coffee, sass, and haml must be installed.
 
 Frontend code is in **./app/** folder
 
