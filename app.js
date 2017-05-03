@@ -1,7 +1,4 @@
 
-/**
-* Module dependencies.
-*/
 
 var port = process.env.PORT || 3003;
 var env = process.env.NODE_ENV || "development";
