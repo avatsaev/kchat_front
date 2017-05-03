@@ -5,6 +5,7 @@ app.factory 'Socket', [
 
     socket = io(app_config.backend_url)
 
+
     {
       on: (eventName, callback) ->
         socket.on eventName, ->

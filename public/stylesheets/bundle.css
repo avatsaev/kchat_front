@@ -2,6 +2,7 @@ body {
   background-color: #222222;
   color: #CCCCCC;
   padding: 25px;
+  padding-top: 0px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   height: auto;
 }
@@ -52,13 +53,13 @@ body {
 
 .msg-container {
   display: block;
+  animation: fadein 500ms;
   float: left;
   clear: both;
   max-width: 100%;
   margin: 0 0 1em 0;
   background: #158ffe;
   color: #fff;
-  display: block;
   width: 100%;
   border-radius: 0.75rem;
   padding: 10px;
@@ -72,13 +73,21 @@ body {
   margin: 0 0 1em 0;
   background: #E7E7E7;
   color: #222222;
-  display: block;
   width: 100%;
   border-radius: 0.75rem;
   padding: 10px;
 }
 
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
 .me-msg {
+  animation: fadein 500ms;
   display: block;
   float: left;
   clear: both;
@@ -86,7 +95,6 @@ body {
   margin: 0 0 1em 0;
   background: #1EC54C;
   color: #fff;
-  display: block;
   width: 100%;
   border-radius: 0.75rem;
   padding: 10px;
@@ -100,6 +108,16 @@ body {
   margin-left: auto;
   margin-right: auto;
   margin-top: 20px;
+}
+
+.span2 {
+  padding: 5px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  text-align: center;
+  background-color: #3F3E3E;
+  margin-left: 5px;
+  margin-right: 5px;
 }
 
 /*# sourceMappingURL=bundle.css.map */

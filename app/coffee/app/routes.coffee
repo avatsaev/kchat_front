@@ -6,7 +6,7 @@ app.config [
   '$urlRouterProvider'
   '$locationProvider'
 
-  ($stateProvider, $urlRouterProvider, $locationProvider) ->
+  ($stateProvider, $urlRouterProvider) ->
 
 
     $stateProvider.state('home',
@@ -20,8 +20,6 @@ app.config [
       templateUrl: '/views/channels/show.html'
     )
 
-
     $urlRouterProvider.otherwise 'home'
-    # $locationProvider.html5Mode(true)
 
 ]

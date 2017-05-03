@@ -14,6 +14,8 @@ app.controller 'ChannelsCtrl.show', [
       User.generate()
       User.channel = $stateParams.channel_id
 
+    $scope.hostname = "-";
+
     Socket.emit "join",
       username: User.name
       frq: User.channel
@@ -55,8 +57,13 @@ app.controller 'ChannelsCtrl.show', [
     Socket.on 'update', (msg) ->
       $('#msgs').append '<li class="system-msg">' + msg + '</li>'
 
+
     Socket.on 'chat', (data) ->
-      $scope.append_msg data.msg, data.sender
+      if(data.sender != User.name)
+        $scope.append_msg data.msg, data.sender
+
+    Socket.on 'host', (hostname) ->
+      $scope.hostname = hostname
 
     Socket.on 'err', (data) ->
 

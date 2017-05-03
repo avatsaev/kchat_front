@@ -8,6 +8,7 @@ app.controller('ChannelsCtrl.show', [
       User.generate();
       User.channel = $stateParams.channel_id;
     }
+    $scope.hostname = "-";
     Socket.emit("join", {
       username: User.name,
       frq: User.channel
@@ -51,7 +52,12 @@ app.controller('ChannelsCtrl.show', [
       return $('#msgs').append('<li class="system-msg">' + msg + '</li>');
     });
     Socket.on('chat', function(data) {
-      return $scope.append_msg(data.msg, data.sender);
+      if (data.sender !== User.name) {
+        return $scope.append_msg(data.msg, data.sender);
+      }
+    });
+    Socket.on('host', function(hostname) {
+      return $scope.hostname = hostname;
     });
     return Socket.on('err', function(data) {
       var dialog;
@@ -89,10 +95,10 @@ app.controller('HomeCtrl', [
   }
 ]);
 
-app.controller('MainCtrl', ['$scope', '$rootScope', '$stateParams', '$state', function($scope, $rootScope, $stateParams, $state) {}]);
+app.controller('MainCtrl', [function() {}]);
 
 app.config([
-  '$stateProvider', '$urlRouterProvider', '$locationProvider', function($stateProvider, $urlRouterProvider, $locationProvider) {
+  '$stateProvider', '$urlRouterProvider', '$locationProvider', function($stateProvider, $urlRouterProvider) {
     $stateProvider.state('home', {
       url: '/home',
       controller: 'HomeCtrl',
