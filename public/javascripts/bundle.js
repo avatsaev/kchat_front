@@ -75,10 +75,6 @@ app.controller('ChannelsCtrl.show', [
   }
 ]);
 
-app.constant("app_config", {
-  backend_url: "//localhost:3002"
-});
-
 app.controller('HomeCtrl', [
   '$scope', '$rootScope', '$stateParams', '$state', 'User', function($scope, $rootScope, $stateParams, $state, User) {
     return $scope.on_login = function() {
@@ -113,9 +109,9 @@ app.config([
 ]);
 
 app.factory('Socket', [
-  '$rootScope', 'app_config', function($rootScope, app_config) {
+  '$rootScope', function($rootScope) {
     var socket;
-    socket = io(app_config.backend_url);
+    socket = io(document.location.origin + '/kawachat');
     return {
       on: function(eventName, callback) {
         return socket.on(eventName, function() {

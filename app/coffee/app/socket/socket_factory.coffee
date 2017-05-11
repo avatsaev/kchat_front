@@ -1,10 +1,8 @@
 app.factory 'Socket', [
   '$rootScope'
-  'app_config'
-  ($rootScope, app_config) ->
+  ($rootScope) ->
 
-    socket = io(app_config.backend_url)
-
+    socket = io(document.location.origin + '/kawachat')
 
     {
       on: (eventName, callback) ->

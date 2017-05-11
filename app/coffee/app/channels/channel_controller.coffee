@@ -82,8 +82,4 @@ app.controller 'ChannelsCtrl.show', [
         Socket.remove_listener('chat')
         $state.go "home"
 
-
-
-
-
 ]

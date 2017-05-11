@@ -60,8 +60,8 @@ module.exports = (grunt) ->
           mangle: true
           compress: true
         files:
-          'public/javascripts/lib.min.js': 'public/javascripts/lib.js'
-          'public/javascripts/bundle.min.js': 'public/javascripts/bundle.js'
+          'public/javascripts/lib.min.js': ['public/javascripts/lib.js']
+          'public/javascripts/bundle.min.js': ['public/javascripts/bundle.js']
 
     jsObfuscate:
       all:
